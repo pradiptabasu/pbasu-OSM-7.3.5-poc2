@@ -1,0 +1,40 @@
+<taskAutomator>
+	<pluginJndiName>ProductValidateTaskAuto.automatedtask.salesorderfulfillment_business.ProductValidateTaskSender</pluginJndiName>
+	<ejbName>ProductValidateTaskAuto.automatedtask.salesorderfulfillment_business.ProductValidateTaskSender</ejbName>
+	<className>oracle.communications.ordermanagement.automation.plugin.XQuerySender</className>
+	<runAs>%{DEFAULT_AUTOMATION_USER}</runAs>
+	          
+	<cartridgeNamespace>@cartridgeNamespace@</cartridgeNamespace>
+    <cartridgeVersion>@cartridgeVersion@</cartridgeVersion>    
+
+	<receive xsi:type="am:InternalReceiver">
+		<mnemonic>ProductValidateTaskAuto</mnemonic>
+ 		<executionModes>do failed_do</executionModes>
+	</receive>		
+    
+	<implement xsi:type="am:XquerySender">
+		<to>
+			<jndiName>Queue1</jndiName>
+			<destinationType>javax.jms.Queue</destinationType>
+			<providerUrl>t3://localhost:7051</providerUrl>
+			<initialContextFactory>weblogic.jndi.WLInitialContextFactory</initialContextFactory>
+			<connectionFactory>ConnectionFactory1</connectionFactory>
+		</to>
+		<replyTo>
+			<jndiName>%{DEFAULT_RESPONSE_QUEUE}</jndiName>
+			<destinationType>javax.jms.Queue</destinationType>
+		</replyTo>
+		<am:sendNullMessage>true</am:sendNullMessage>
+		<am:script>
+			<am:resource>resources/SalesOrderFulfillment_Business/ProductValidateTaskAuto.xquery</am:resource>
+			<am:cache>
+				<am:maxSize>50</am:maxSize>
+				<am:timeout>15000</am:timeout>
+			</am:cache>
+		</am:script>
+		<am:exception>
+			<am:status>ErrorState</am:status>
+		</am:exception>
+	</implement>          
+	<failTaskOnException>false</failTaskOnException>
+</taskAutomator>

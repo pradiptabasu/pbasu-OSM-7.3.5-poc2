@@ -1,0 +1,36 @@
+<taskAutomator>
+	<pluginJndiName>ValidateProductFromSPC.ProductValidationFromSPC</pluginJndiName>
+	<ejbName>ValidateProductFromSPC.ProductValidationFromSPC</ejbName>
+	<className>oracle.communications.ordermanagement.automation.plugin.XQueryReceiver</className>
+	<runAs>oms-automation</runAs>
+	          
+	<cartridgeNamespace>@cartridgeNamespace@</cartridgeNamespace>
+    <cartridgeVersion>@cartridgeVersion@</cartridgeVersion>    
+
+	<receive xsi:type="am:ExternalReceiver">
+		<jmsSource>
+			<from>
+				<jndiName>ValidateProductFromSPC.ProductValidationFromSPC.jndiName</jndiName>
+				<destinationType>javax.jms.Queue</destinationType>				
+			</from>			
+		</jmsSource>	
+		<correlation xsi:type="MessagePropertyCorrelation">
+			<property>JMSCorrelationID</property>
+		</correlation>	
+	</receive>	
+    
+	<implement xsi:type="am:XqueryAutomator">
+		<am:script>
+			<am:file>\\garland\osm\test\weblogic\osm_domain\OM_Xquery\ORR.xquery</am:file>
+			<am:cache>
+				<am:maxSize>50</am:maxSize>
+				<am:timeout>15000</am:timeout>
+			</am:cache>
+		</am:script>
+		<am:updateOrder>true</am:updateOrder>
+		<am:exception>
+			<am:status>failure</am:status>
+		</am:exception>
+	</implement>          
+	<failTaskOnException>false</failTaskOnException>
+</taskAutomator>
