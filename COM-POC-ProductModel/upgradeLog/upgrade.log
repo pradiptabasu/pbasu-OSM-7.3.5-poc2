@@ -1,0 +1,9 @@
+
+[Info] (Oct 3, 2018 5:32:31 PM) Start to upgrade project COM-POC-ProductModel
+[Info] (Oct 3, 2018 5:32:31 PM) Start to upgrade with participant oracle.communications.sce.common.entity.entities.action.upgrade.PreProjectOpenActionUpgradeParticipant
+[Info] (Oct 3, 2018 5:32:31 PM) Upgrade of Service and Technical Action Started 
+[Info] (Oct 3, 2018 5:32:31 PM) Removing Fulfillment Pattern and Fulfillment Function 
+[Info] (Oct 3, 2018 5:32:31 PM) Upgrade of Service and Technical Action Completed
+[Info] (Oct 3, 2018 5:32:33 PM) Start to upgrade with participant oracle.communications.studio.osm.provisioning.project.upgrade.AssetAccountTagRemovalUpgradeParticipant
+[Info] (Oct 3, 2018 5:32:33 PM) Start to upgrade with participant oracle.communications.sce.common.entity.entities.action.upgrade.ActionCodesUpgradeParticipant
+[Info] (Oct 3, 2018 5:32:33 PM) Upgrade Functional Area Commercial

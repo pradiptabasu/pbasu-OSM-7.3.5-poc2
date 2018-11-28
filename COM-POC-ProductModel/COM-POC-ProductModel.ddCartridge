@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com="http://www.mslv.com/studio/core/model/common" xsi:type="com:abstractCartridgeType" name="COM-POC-ProductModel">
+  <com:displayName>COM-POC-ProductModel</com:displayName>
+  <com:saveVersion>3</com:saveVersion>
+  <com:id>YTC9wPjOT5mlDeKh2d53Bg</com:id>
+  <com:provider>Studio Data Dictionary Provider</com:provider>
+  <com:version>
+    <com:major>1</com:major>
+    <com:minor>0</com:minor>
+    <com:maintenance>0</com:maintenance>
+    <com:servicePack>0</com:servicePack>
+    <com:eFix>0</com:eFix>
+    <com:build>0</com:build>
+  </com:version>
+  <com:targetApplicationVersion>
+    <com:major>1</com:major>
+    <com:minor>0</com:minor>
+    <com:maintenance>0</com:maintenance>
+    <com:servicePack>0</com:servicePack>
+    <com:eFix>0</com:eFix>
+  </com:targetApplicationVersion>
+  <com:sealed>false</com:sealed>
+  <com:dependencyViolationErrorLevel>error</com:dependencyViolationErrorLevel>
+  <com:catridgeElement>
+    <com:id>vSH9ktAZR-G5CerZzV3jKg</com:id>
+    <com:elementType>oracle.communications.studio.model.StudioCartridgeElement</com:elementType>
+  </com:catridgeElement>
+</com:modelEntity>

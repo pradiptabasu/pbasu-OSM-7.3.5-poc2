@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.oracle.com/communications/sce/osm/model/cartridge" xmlns:cart="http://xmlns.oracle.com/communications/sce/osm/model/cartridge" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:prov="http://xmlns.oracle.com/communications/sce/osm/model/provisioning" xsi:type="provisioningCartridgeType" name="SalesOrderFulfillment-POCRecognitionRule">
+  <com:displayName lang="[default]">SalesOrderFulfillment-POCRecognitionRule</com:displayName>
+  <com:saveVersion>6</com:saveVersion>
+  <com:id>hv0SkVssTeuMiBC2gf1gkg</com:id>
+  <com:provider>OSM Cartridge Provider</com:provider>
+  <com:version>
+    <com:major>1</com:major>
+    <com:minor>0</com:minor>
+    <com:maintenance>0</com:maintenance>
+    <com:servicePack>0</com:servicePack>
+    <com:eFix>0</com:eFix>
+  </com:version>
+  <com:targetApplicationVersion>
+    <com:major>7</com:major>
+    <com:minor>3</com:minor>
+    <com:maintenance>1</com:maintenance>
+  </com:targetApplicationVersion>
+  <com:sealed>false</com:sealed>
+  <com:deploymentList displayName="Orders" includeAll="true" relationship="com.mslv.studio.provisioning.cartridge.packageActions">
+    <com:modelID>com.mslv.studio.provisioning.order</com:modelID>
+    <com:elementLocationName>model</com:elementLocationName>
+  </com:deploymentList>
+  <com:deploymentList displayName="Java Libraries" includeAll="true" relationship="com.mslv.studio.provisioning.cartridge.packageLibrary">
+    <com:extension>jar</com:extension>
+    <com:elementLocationName>lib</com:elementLocationName>
+  </com:deploymentList>
+  <com:deploymentList displayName="Resources" includeAll="true" relationship="com.mslv.studio.provisioning.cartridge.packageResources">
+    <com:extension>*</com:extension>
+    <com:elementLocationName>resources</com:elementLocationName>
+  </com:deploymentList>
+  <com:propertyCategory name="Cartridge Management">
+    <com:property name="PURGE_CARTRIDGE_BEFORE_DEPLOY">
+      <com:defaultValue>false</com:defaultValue>
+    </com:property>
+    <com:property name="ENTITY_CONFLICT_ACTION_ON_DEPLOY">
+      <com:defaultValue>replace</com:defaultValue>
+    </com:property>
+    <com:property name="PURGE_ORDER_ON_UNDEPLOY">
+      <com:defaultValue>true</com:defaultValue>
+    </com:property>
+    <com:property name="FAST_CARTRIDGE_UNDEPLOY">
+      <com:defaultValue>true</com:defaultValue>
+    </com:property>
+    <com:property name="DEFAULT_CARTRIDGE">
+      <com:defaultValue>true</com:defaultValue>
+    </com:property>
+  </com:propertyCategory>
+  <com:propertyCategory name="Model">
+    <com:property name="DEFAULT_AUTOMATION_USER">
+      <com:defaultValue>oms-automation</com:defaultValue>
+    </com:property>
+    <com:property name="DEFAULT_REQUEST_QUEUE">
+      <com:defaultValue></com:defaultValue>
+    </com:property>
+    <com:property name="DEFAULT_RESPONSE_QUEUE">
+      <com:defaultValue>mslv/oms/oms1/internal/jms/events</com:defaultValue>
+    </com:property>
+    <com:property name="DEFAULT_MESSAGE_PROPERTY_SELECTOR">
+      <com:defaultValue></com:defaultValue>
+    </com:property>
+    <com:property name="ACTIVATION_ENVIRONMENT_ID">
+      <com:defaultValue>ENV1</com:defaultValue>
+    </com:property>
+  </com:propertyCategory>
+  <com:dependencies>
+    <com:minVersion inclusive="true">1.0.0.0.0</com:minVersion>
+    <com:maxVersion inclusive="false"></com:maxVersion>
+    <com:projectRef>
+      <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+      <com:entityType>osmCartridge</com:entityType>
+      <com:relationship>unknown</com:relationship>
+    </com:projectRef>
+    <com:dependencyType>design</com:dependencyType>
+  </com:dependencies>
+  <com:dependencies>
+    <com:minVersion inclusive="true">1.1.0.0.0</com:minVersion>
+    <com:maxVersion inclusive="false"></com:maxVersion>
+    <com:projectRef>
+      <com:entity>SalesOrderFulfillment-POCBase</com:entity>
+      <com:entityType>osmCartridge</com:entityType>
+      <com:relationship>unknown</com:relationship>
+    </com:projectRef>
+    <com:dependencyType>design</com:dependencyType>
+  </com:dependencies>
+  <com:dependencyViolationErrorLevel>error</com:dependencyViolationErrorLevel>
+  <com:cartridgePackageName></com:cartridgePackageName>
+  <com:catridgeElement>
+    <com:id>sMSK5NWiRV6varTjKPXz9Q</com:id>
+    <com:elementType>oracle.communications.studio.model.StudioCartridgeElement</com:elementType>
+  </com:catridgeElement>
+  <activationEnvID></activationEnvID>
+  <activationResponseQueue></activationResponseQueue>
+  <cacheMaxSize>50</cacheMaxSize>
+  <cacheTimeout>60</cacheTimeout>
+  <standalone>false</standalone>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>IdXw6w2EQi2+vQ9AtNcpVg</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>com.mslv.studio.core.dataDictionary</modelID>
+    <elementLocationName>dataDictionary</elementLocationName>
+  </exportedEntityList>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>6698xAfnSdO-fSqqIbXL2A</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.decompositionRule</modelID>
+    <elementLocationName>model</elementLocationName>
+  </exportedEntityList>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>l+iEqUB0QdG5-4GlCSZwCQ</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>com.mslv.studio.provisioning.order</modelID>
+    <elementLocationName>model</elementLocationName>
+  </exportedEntityList>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>fBP7KeSQSc2Xx6mye7+uLQ</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.orderComponentSpec</modelID>
+    <elementLocationName>model</elementLocationName>
+  </exportedEntityList>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>Qbto6DxuQde76l-Q-UiHUw</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.orderRecognitionRule</modelID>
+    <elementLocationName>model</elementLocationName>
+  </exportedEntityList>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>PaJjxw1rSJawzUl1djNMjQ</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>com.mslv.studio.provisioning.process</modelID>
+    <modelID>oracle.communications.sce.osm.orchestration.orchestrationProcess</modelID>
+    <elementLocationName>model</elementLocationName>
+  </exportedEntityList>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>vHMyLO52Q8y2kAS9Bi9+rQ</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.productSpec</modelID>
+    <elementLocationName>model</elementLocationName>
+  </exportedEntityList>
+  <exportedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList.entity">
+    <com:id>pF1LwnRMTpqJGK3zI-YhJQ</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.exportedEntityList</com:elementType>
+    <modelID>com.mslv.studio.provisioning.task.manualTask</modelID>
+    <modelID>com.mslv.studio.provisioning.task.automatedTask</modelID>
+    <elementLocationName>model</elementLocationName>
+  </exportedEntityList>
+  <referencedCartridges includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedCartridges.cartridge">
+    <com:id>vIxMwhmOSqqb15O36xxjrA</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedCartridges</com:elementType>
+  </referencedCartridges>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>I8yKTmy-TsyNN4wceISYMA</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>com.mslv.studio.core.dataDictionary</modelID>
+    <elementLocationName>dataDictionary</elementLocationName>
+  </referencedEntityList>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>FCJfbfA6S7G6ncxdcnPAxA</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.decompositionRule</modelID>
+    <elementLocationName>model</elementLocationName>
+  </referencedEntityList>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>fui0SqrjR4eMbhrzcvMkwg</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>com.mslv.studio.provisioning.order</modelID>
+    <elementLocationName>model</elementLocationName>
+  </referencedEntityList>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>D5k1BaCwT9eAfLgwE4Vipg</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.orderComponentSpec</modelID>
+    <elementLocationName>model</elementLocationName>
+  </referencedEntityList>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>ypXJWGgTSL2t3EQOiH7S1w</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.orderRecognitionRule</modelID>
+    <elementLocationName>model</elementLocationName>
+  </referencedEntityList>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>pWcEYotDTAmOhYwkEzEF+g</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>com.mslv.studio.provisioning.process</modelID>
+    <modelID>oracle.communications.sce.osm.orchestration.orchestrationProcess</modelID>
+    <elementLocationName>model</elementLocationName>
+  </referencedEntityList>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>ZI7WDyx+QPy1bIYlBKDJCg</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>oracle.communications.sce.osm.orchestration.productSpec</modelID>
+    <elementLocationName>model</elementLocationName>
+  </referencedEntityList>
+  <referencedEntityList includeAll="true" relationship="com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList.entity">
+    <com:id>kB6lZUemQyikyWIlHajeNA</com:id>
+    <com:elementType>com.mslv.studio.provisioning.provisioningCartridge.referencedEntityList</com:elementType>
+    <modelID>com.mslv.studio.provisioning.task.manualTask</modelID>
+    <modelID>com.mslv.studio.provisioning.task.automatedTask</modelID>
+    <elementLocationName>model</elementLocationName>
+  </referencedEntityList>
+</com:modelEntity>

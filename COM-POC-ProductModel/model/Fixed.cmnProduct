@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.mslv.com/studio/core/model/common" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:data="http://www.oracle.com/communications/studio/core/model/common/data" xmlns:dom="http://xmlns.oracle.com/communications/sce/model/common/entity" xsi:type="dom:ProductType" name="Fixed">
+  <displayName lang="[default]">Fixed</displayName>
+  <saveVersion>2</saveVersion>
+  <id>FaBfWa5YTdmAcyHdlNa6lg</id>
+  <data:dataElementNode virtual="true">
+    <id>FaBfWa5YTdmAcyHdlNa6lg</id>
+    <elementType>oracle.communications.studio.model.data.StudioModelDataElement</elementType>
+    <data:name>Fixed</data:name>
+    <data:displayName lang="[default]">Fixed</data:displayName>
+    <data:primitiveType>none</data:primitiveType>
+  </data:dataElementNode>
+  <data:dataElementDetails xsi:type="data:dataElementCommonDetail">
+    <id>Rp6kssgGRAmwli9hjV4dfQ</id>
+    <elementType>oracle.communications.studio.model.data.StudioModelDataElementCommonDetails</elementType>
+    <data:dataElementId>FaBfWa5YTdmAcyHdlNa6lg</data:dataElementId>
+    <data:defaultValue></data:defaultValue>
+    <data:key></data:key>
+    <data:deprecated>false</data:deprecated>
+    <data:sensitive>false</data:sensitive>
+    <data:minLength>0</data:minLength>
+    <data:maxLength>40</data:maxLength>
+    <data:minMultiplicity>0</data:minMultiplicity>
+    <data:maxMultiplicity>-1</data:maxMultiplicity>
+  </data:dataElementDetails>
+  <dom:attributes>
+    <id>oDctmVg-T9m6cg2Q-gSi2A</id>
+    <elementType>oracle.communications.sce.common.entity.entities.product.productattributes</elementType>
+    <dom:startImmediately>true</dom:startImmediately>
+    <dom:noEndDate>true</dom:noEndDate>
+  </dom:attributes>
+  <dom:extension>
+    <id>UCeNO0BRQNOd+TO80QhYRQ</id>
+    <elementType>oracle.communications.sce.common.entity.entities.product.productextension</elementType>
+  </dom:extension>
+  <dom:processingPattern>
+    <id>1Ior-Oy-QG6RWjYfDaPTJw</id>
+    <elementType>oracle.communications.sce.common.entity.entities.product.producttoprocessingpatternref</elementType>
+    <dom:key>Fixed</dom:key>
+    <dom:processingPatterns>
+      <entity>COM_Broadband_FulfillmentPatern</entity>
+      <entityType>procPtrnType</entityType>
+      <relationship>oracle.communications.sce.common.entity.entities.product.producttoprocessingpatternref.patternRef</relationship>
+    </dom:processingPatterns>
+  </dom:processingPattern>
+</modelEntity>

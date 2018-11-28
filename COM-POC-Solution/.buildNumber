@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Cartridge build</comment>
+<entry key="systemBuildNumber">1543411372822</entry>
+<entry key="buildNumber">84</entry>
+<entry key="packageNumber">84</entry>
+</properties>

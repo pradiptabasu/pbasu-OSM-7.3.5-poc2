@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.mslv.com/studio/core/model/common" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:data="http://www.oracle.com/communications/studio/core/model/common/data" xmlns:dom="http://xmlns.oracle.com/communications/sce/model/common/entity" xsi:type="dom:FunctionalAreaType" name="Commercial">
+  <displayName lang="[default]">Commercial</displayName>
+  <saveVersion>2</saveVersion>
+  <id>uk0W5FczSdCtXH5rYKxr+g</id>
+  <data:dataElementNode virtual="true">
+    <id>uk0W5FczSdCtXH5rYKxr+g</id>
+    <elementType>oracle.communications.studio.model.data.StudioModelDataElement</elementType>
+    <data:name>Commercial</data:name>
+    <data:displayName lang="[default]">Commercial</data:displayName>
+    <data:primitiveType>none</data:primitiveType>
+  </data:dataElementNode>
+  <data:dataElementDetails xsi:type="data:dataElementCommonDetail">
+    <id>d5X68R5cQ6yMurnSy5+DcA</id>
+    <elementType>oracle.communications.studio.model.data.StudioModelDataElementCommonDetails</elementType>
+    <data:dataElementId>uk0W5FczSdCtXH5rYKxr+g</data:dataElementId>
+    <data:defaultValue></data:defaultValue>
+    <data:key></data:key>
+    <data:deprecated>false</data:deprecated>
+    <data:sensitive>false</data:sensitive>
+    <data:minLength>0</data:minLength>
+    <data:maxLength>40</data:maxLength>
+    <data:minMultiplicity>0</data:minMultiplicity>
+    <data:maxMultiplicity>-1</data:maxMultiplicity>
+  </data:dataElementDetails>
+  <dom:actionCodes>
+    <id>PXxV2yWtTyWwx06KP2lstw</id>
+    <elementType>oracle.communications.sce.common.entity.entities.functionalarea.functionalareaactioncodes</elementType>
+  </dom:actionCodes>
+  <dom:actionPrefix>
+    <id>RUTz1Iy2RV+0wejOUvTkig</id>
+    <elementType>oracle.communications.sce.common.entity.entities.functionalarea.actionprefix</elementType>
+  </dom:actionPrefix>
+  <dom:providerFunctions>
+    <id>Fi4nJz6PSMKRZD8CWWXSUg</id>
+    <elementType>oracle.communications.sce.common.entity.entities.functionalarea.functionalareaproviderfunctions</elementType>
+  </dom:providerFunctions>
+  <dom:realization>
+    <id>kjZ2fmVYQo+jUyk23BFTag</id>
+    <elementType>oracle.communications.sce.common.entity.entities.functionalarea.functionalarearealization</elementType>
+    <dom:designPattern></dom:designPattern>
+    <dom:areaRealizationDesignPattern xsi:nil="true"/>
+    <dom:functionalAreaRealizationStruct>NONE</dom:functionalAreaRealizationStruct>
+  </dom:realization>
+</modelEntity>

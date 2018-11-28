@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.oracle.com/communications/sce/osm/model/orchestration" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:ord="http://xmlns.oracle.com/communications/sce/osm/model/order" xmlns:osm="http://xmlns.oracle.com/communications/sce/osm/model/provisioning" xmlns:prov="http://xmlns.oracle.com/communications/sce/osm/model/process/task" xsi:type="DecompositionRuleType" name="DecomProvisionOrder_For_WholeOrderGranularity">
+  <com:displayName>DecomProvisionOrder_For_WholeOrderGranularity</com:displayName>
+  <com:saveVersion>5</com:saveVersion>
+  <com:id>IRYnIr5gSImQU1URVYE2ag</com:id>
+  <namespace>SalesOrderFulfillment</namespace>
+  <orderItem>
+    <com:entity>SalesOrderLine</com:entity>
+    <com:entityType>orderItemSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.decompositionRule.orderItem</com:relationship>
+  </orderItem>
+  <product>
+    <com:entity>BusinessBBSpec</com:entity>
+    <com:entityType>productSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.decompositionRule.productSpec</com:relationship>
+  </product>
+  <source>
+    <com:entity>Provisioning-ALL</com:entity>
+    <com:entityType>orderComponentSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.decompositionRule.source</com:relationship>
+  </source>
+  <target>
+    <com:entity>ItemGranularity</com:entity>
+    <com:entityType>orderComponentSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.decompositionRule.target</com:relationship>
+  </target>
+</com:modelEntity>

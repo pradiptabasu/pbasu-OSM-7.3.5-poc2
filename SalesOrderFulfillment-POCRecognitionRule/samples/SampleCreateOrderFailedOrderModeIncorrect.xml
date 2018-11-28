@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ws:CreateOrder xmlns:ws="http://xmlns.oracle.com/communications/ordermanagement">
+
+	<ws:Order>
+		<ws:OrderHeader>
+			<ws:SalesOrderNumber />
+			<ws:CustomerReference />					<!-- Order reference apart from sales channels -->
+			<ws:SalesChannel>
+				<ws:ID>01-7050</ws:ID>   						 <!-- Same as dealer code mapping -->
+				<ws:Name>SSCB</ws:Name>
+				<ws:Salesman />
+				<ws:SalesmanEmail />
+				<ws:FulfillmentId>R20216</ws:FulfillmentId>			<!-- R21759 (SSCR), R20216 (SSCB) etc -->
+				<ws:SystemId />  					<!-- Same as SystemID -->
+			</ws:SalesChannel>
+			<ws:OrderType>NewCreation</ws:OrderType>
+			<ws:Catalog />
+			<ws:Mode>Deliver HIJIBIJI</ws:Mode>     <!-- For all fixed net order= Delivery wireline -->
+			<ws:OrderCreationDate />
+			<ws:RequestedDeliveryDate />  <!-- Future dated orders : booking date -->
+			<ws:RightOfCancelation />
+			<ws:orderConfirmation>                            <!-- COntact product information -->
+				<ws:email>sotad@tdc.dk</ws:email>
+				<ws:contactNo>244435656</ws:contactNo>
+				<ws:contactName>SoujanyaT</ws:contactName>
+				<ws:signatureDate>29-Dec-16</ws:signatureDate>
+			</ws:orderConfirmation>
+		</ws:OrderHeader>
+		<ws:CustomerHeader>
+			<ws:CustomerType>Business</ws:CustomerType>
+			<ws:CustomerName />
+			<ws:ContractCustomer>Y</ws:ContractCustomer> 			  <!--Boolen if contact exists in Bonus etc -->
+			<ws:CustomerInfo>
+				<ws:CompanyInfo>
+					<ws:CVRno />
+					<ws:CompanyName />
+					<ws:Department />
+					<ws:Email />
+					<ws:Phone />
+					<ws:ContactPerson />
+				</ws:CompanyInfo>
+				<ws:ResidentialInfo>
+					<ws:CPRno /> 	  						<!-- Encrypted -->
+					<ws:IdNo />
+					<ws:IDType />
+					<ws:FirstName />
+					<ws:LastName />
+					<ws:Phone />
+					<ws:Email />
+				</ws:ResidentialInfo>
+				<ws:Address>
+					<ws:AddressID>1</ws:AddressID>
+					<ws:StreetName>dff</ws:StreetName>
+					<ws:HouseNo />
+					<ws:ZipCode />
+					<ws:Country />
+					<ws:City />
+					<ws:Village />
+					<ws:HouseLetter />
+					<ws:Floor />
+					<ws:AppartmentNo />
+					<ws:HouseKey />
+					<ws:Side />
+					<ws:Pob />
+				</ws:Address>
+			</ws:CustomerInfo>
+		</ws:CustomerHeader>
+		<ws:AccountDetails>
+			<ws:AccountInfo>
+				<ws:AccountType>BUS</ws:AccountType>
+				<ws:AccountNo />
+				<ws:CustomerName />
+				<ws:CustomerNumber />
+				<ws:ParentAccountNo />
+				<ws:TargetAccountNo />
+				<ws:originalAccountNo />
+				<ws:Segmentation />
+			</ws:AccountInfo>
+		</ws:AccountDetails>
+		<ws:OrderDetails>
+			<ws:ERegistrationDetails>
+				<ws:InvoiceInfo>
+					<ws:InvoiceRemark>some invoice remark on LID</ws:InvoiceRemark>
+				</ws:InvoiceInfo>
+			</ws:ERegistrationDetails>
+			<ws:BillingDetails>
+				<ws:CompanyPayerInfo>
+					<ws:CVRno />
+					<ws:CompanyName />
+					<ws:Department />
+					<ws:Email />
+					<ws:Phone />
+				</ws:CompanyPayerInfo>
+				<ws:ResidentialPayerInfo>
+					<ws:CPRno /> 	  						<!-- Encrypted -->
+					<ws:IdNo />
+					<ws:IDType />
+					<ws:FirstName />
+					<ws:LastName />
+					<ws:Phone />
+					<ws:Email />
+				</ws:ResidentialPayerInfo>
+				<ws:Address>
+					<ws:AddressID>2</ws:AddressID>
+					<ws:StreetName />
+					<ws:HouseNo />
+					<ws:ZipCode />
+					<ws:Country />
+					<ws:City />
+					<ws:Village />
+					<ws:HouseLetter />
+					<ws:Floor />
+					<ws:AppartmentNo />
+					<ws:HouseKey />
+					<ws:Side />
+					<ws:Pob />
+				</ws:Address>
+			</ws:BillingDetails>
+			<ws:UserDetails>
+				<ws:CompanyUserInfo>
+					<ws:CVRno />
+					<ws:CompanyName />
+					<ws:Department />
+					<ws:Email />
+					<ws:Phone />
+				</ws:CompanyUserInfo>
+				<ws:ResidentialUserInfo>
+					<ws:CPRno /> 	  						<!-- Encrypted -->
+					<ws:IdNo />
+					<ws:IDType />
+					<ws:FirstName />
+					<ws:LastName />
+					<ws:Phone />
+					<ws:Email />
+				</ws:ResidentialUserInfo>
+				<ws:Address>
+					<ws:AddressID>3</ws:AddressID>
+					<ws:StreetName />
+					<ws:HouseNo />
+					<ws:ZipCode />
+					<ws:Country />
+					<ws:City />
+					<ws:Village />
+					<ws:HouseLetter />
+					<ws:Floor />
+					<ws:AppartmentNo />
+					<ws:HouseKey />
+					<ws:Side />
+					<ws:Pob />
+				</ws:Address>
+			</ws:UserDetails>
+			<ws:ShipmentDetails>
+				<ws:CompanyShipInfo>
+					<ws:CVRno />
+					<ws:CompanyName />
+					<ws:Department />
+					<ws:Email />
+					<ws:Phone />
+				</ws:CompanyShipInfo>
+				<ws:ResidentialShipInfo>
+					<ws:CPRno /> 	  						<!-- Encrypted -->
+					<ws:IdNo />
+					<ws:IDType />
+					<ws:FirstName />
+					<ws:LastName />
+					<ws:Phone />
+					<ws:Email />
+				</ws:ResidentialShipInfo>
+				<ws:ShipAddress>
+					<ws:AddressID>4</ws:AddressID>
+					<ws:StreetName />
+					<ws:HouseNo />
+					<ws:ZipCode />
+					<ws:Country />
+					<ws:City />
+					<ws:Village />
+					<ws:HouseLetter />
+					<ws:Floor />
+					<ws:AppartmentNo />
+					<ws:HouseKey />
+					<ws:Side />
+					<ws:Pob />
+				</ws:ShipAddress>
+			</ws:ShipmentDetails>
+			<ws:InstallationDetails>
+				<ws:InstallationInfo>
+					<ws:AccessPtName /> <!-- Optional -->
+					<ws:FormerAccess />   <!-- Former LID -->
+					<ws:NewAccess>true</ws:NewAccess>			<!-- new access line to be provided ? Boolean -->
+					<ws:AccessTakeoverAction>false</ws:AccessTakeoverAction>     <!-- action on existing Line -->
+				</ws:InstallationInfo>
+				<ws:InstallationAddress>
+					<ws:AddressID />
+					<ws:StreetName />
+					<ws:HouseNo />
+					<ws:ZipCode />
+					<ws:Country />
+					<ws:City />
+					<ws:Village />
+					<ws:HouseLetter />
+					<ws:Floor />
+					<ws:AppartmentNo />
+					<ws:HouseKey />
+					<ws:Side />
+					<ws:Pob />
+				</ws:InstallationAddress>
+			</ws:InstallationDetails>
+			<ws:OrderPrice>
+				<ws:priceAgreementNumber>231</ws:priceAgreementNumber>   <!-- Optional : and many repetitions -->
+			</ws:OrderPrice>
+		</ws:OrderDetails>
+		<ws:OrderLines>
+		 	<ws:OrderLine>
+				<ws:OrderLineId>Orderline1</ws:OrderLineId>
+				<ws:ParentOrderLineId>Orderline1</ws:ParentOrderLineId>
+				<ws:RootOrderItemId>Orderline1</ws:RootOrderItemId>
+				<ws:ProductId>SP66_073_10</ws:ProductId>
+				<ws:ProductName>TDC Erhverv BB Line 1</ws:ProductName>
+				<ws:ProductClass>Fixed</ws:ProductClass>
+				<ws:OrderLineAction>ADD</ws:OrderLineAction>
+			</ws:OrderLine>
+			<ws:OrderLine>
+				<ws:OrderLineId>Orderline2</ws:OrderLineId>
+				<ws:RootOrderItemId>Orderline1</ws:RootOrderItemId>
+				<ws:ParentOrderLineId>Orderline1</ws:ParentOrderLineId>
+				<ws:ProductId>AP96_320_00</ws:ProductId>
+				<ws:ProductClass />
+				<ws:ProductName>TDC Erhverv BB Line 1 Child 1</ws:ProductName>
+				<ws:OrderLineAction />
+			</ws:OrderLine>
+			<ws:OrderLine>
+				<ws:OrderLineId>Orderline3</ws:OrderLineId>
+				<ws:RootOrderItemId>Orderline1</ws:RootOrderItemId>
+				<ws:ParentOrderLineId>Orderline1</ws:ParentOrderLineId>
+				<ws:ProductId>AP06_079_00</ws:ProductId>
+				<ws:ProductClass />
+				<ws:ProductName>TDC Erhverv BB Line 1 Child 2</ws:ProductName>
+				<ws:OrderLineAction>ADD</ws:OrderLineAction>
+				<ws:ProductAttributes>
+					<ws:ParameterName>TEKNIK_CALL</ws:ParameterName>
+					<ws:ParameterValue>22222222</ws:ParameterValue>
+					<ws:ParameterAction>ADD</ws:ParameterAction>
+				</ws:ProductAttributes>
+			</ws:OrderLine>
+		</ws:OrderLines>
+		<ws:OrderLines>
+			<ws:OrderLine>
+				<ws:OrderLineId>Orderline4</ws:OrderLineId>
+				<ws:ParentOrderLineId>Orderline4</ws:ParentOrderLineId>
+				<ws:RootOrderItemId>Orderline4</ws:RootOrderItemId>
+				<ws:ProductId>SP66_073_11</ws:ProductId>
+				<ws:ProductName>TDC Erhverv BB Line 2</ws:ProductName>
+				<ws:ProductClass>Fixed</ws:ProductClass>
+				<ws:OrderLineAction>ADD</ws:OrderLineAction>
+			</ws:OrderLine>
+			<ws:OrderLine>
+				<ws:OrderLineId>Orderline5</ws:OrderLineId>
+				<ws:RootOrderItemId>Orderline4</ws:RootOrderItemId>
+				<ws:ParentOrderLineId>Orderline4</ws:ParentOrderLineId>
+				<ws:ProductId>AP96_320_00</ws:ProductId>
+				<ws:ProductClass />
+				<ws:ProductName>TDC Erhverv BB Line 2 Child 1</ws:ProductName>
+				<ws:OrderLineAction />
+			</ws:OrderLine>
+			<ws:OrderLine>
+				<ws:OrderLineId>Orderline6</ws:OrderLineId>
+				<ws:RootOrderItemId>Orderline4</ws:RootOrderItemId>
+				<ws:ParentOrderLineId>Orderline4</ws:ParentOrderLineId>
+				<ws:ProductId>AP06_079_00</ws:ProductId>
+				<ws:ProductClass />
+				<ws:ProductName>TDC Erhverv BB Line 2 Child 2</ws:ProductName>
+				<ws:OrderLineAction>ADD</ws:OrderLineAction>
+				<ws:ProductAttributes>
+					<ws:ParameterName>TEKNIK_CALL</ws:ParameterName>
+					<ws:ParameterValue>22222222</ws:ParameterValue>
+					<ws:ParameterAction>ADD</ws:ParameterAction>
+				</ws:ProductAttributes>
+			</ws:OrderLine>
+		</ws:OrderLines>
+	</ws:Order>
+
+</ws:CreateOrder>

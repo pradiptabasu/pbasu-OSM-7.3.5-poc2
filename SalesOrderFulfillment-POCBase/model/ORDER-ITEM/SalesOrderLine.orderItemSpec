@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.oracle.com/communications/sce/osm/model/orchestration" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:ord="http://xmlns.oracle.com/communications/sce/osm/model/order" xmlns:osm="http://xmlns.oracle.com/communications/sce/osm/model/provisioning" xmlns:prov="http://xmlns.oracle.com/communications/sce/osm/model/process/task" xsi:type="OrderItemSpec" name="SalesOrderLine">
+  <com:displayName>SalesOrderLine</com:displayName>
+  <com:saveVersion>97</com:saveVersion>
+  <com:id>AWkzUGbTSMOQpmxaGbT5hg</com:id>
+  <namespace>SalesOrderFulfillment</namespace>
+  <useComplexDataType>true</useComplexDataType>
+  <extendAbstractOrderItemType>false</extendAbstractOrderItemType>
+  <productSpecMappingProperty>
+    <com:entity>SalesOrderLine</com:entity>
+    <com:entityType>orderItemSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.orderItemSpec.requestedDeliveryDateProperty</com:relationship>
+    <com:element>ProductSpec</com:element>
+    <com:elementType>oracle.communications.sce.osm.orchestration.orderItemSpec.property</com:elementType>
+  </productSpecMappingProperty>
+  <itemNameProperty>
+    <com:entity>SalesOrderLine</com:entity>
+    <com:entityType>orderItemSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.orderItemSpec.itemNameProperty</com:relationship>
+    <com:element>LineName</com:element>
+    <com:elementType>oracle.communications.sce.osm.orchestration.orderItemSpec.property</com:elementType>
+    <com:elementName>LineName</com:elementName>
+  </itemNameProperty>
+  <itemActionProperty>
+    <com:entity>SalesOrderLine</com:entity>
+    <com:entityType>orderItemSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.orderItemSpec.itemActionProperty</com:relationship>
+    <com:element>OrderLineAction</com:element>
+    <com:elementType>oracle.communications.sce.osm.orchestration.orderItemSpec.property</com:elementType>
+  </itemActionProperty>
+  <property name="LineId">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace ws=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+fn:normalize-space(ws:OrderLineId/text())</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <property name="LineName">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace ws=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+fn:normalize-space(ws:ProductName/text())</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <property name="ParentOrderLineId">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace ws=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+fn:normalize-space(ws:ParentOrderLineId/text())</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <property name="RootLineId">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace ws=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+fn:normalize-space(ws:RootOrderItemId/text())</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <property name="ProductClass">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace ws=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+declare variable $inputDoc as document-node() external;&#xD;
+let $order := $inputDoc/GetOrder.Response/_root/inputMessage/ws:Order&#xD;
+let $productClass  := fn:normalize-space(ws:ProductClass/text())&#xD;
+let $ParentOrderLineId :=fn:normalize-space(ws:ParentOrderLineId/text())&#xD;
+let $ParentproductClass :=fn:normalize-space($order//ws:OrderLine[ws:OrderLineId/text() =$ParentOrderLineId]/ws:ProductClass/text())&#xD;
+ &#xD;
+return&#xD;
+   if ($productClass  != '' and $productClass='Fixed')    then&#xD;
+    $productClass&#xD;
+   else&#xD;
+     $ParentproductClass</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <property name="ProductSpec">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace ws=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+declare variable $inputDoc as document-node() external;&#xD;
+let $order := $inputDoc/GetOrder.Response/_root/inputMessage/ws:Order&#xD;
+let $productClass  := fn:normalize-space(ws:ProductClass/text())&#xD;
+let $ParentOrderLineId :=fn:normalize-space(ws:ParentOrderLineId/text())&#xD;
+let $ParentproductClass :=fn:normalize-space($order//ws:OrderLine[ws:ParentOrderLineId/text() =$ParentOrderLineId]/ws:ProductClass/text())&#xD;
+let $productSpec := 'BusinessBBSpec'&#xD;
+ &#xD;
+   return&#xD;
+   if ($productClass  != '' )    then&#xD;
+     if($productClass='Fixed') then&#xD;
+        $productSpec&#xD;
+     else()&#xD;
+   else&#xD;
+      if($ParentproductClass='Fixed') then&#xD;
+          $productSpec&#xD;
+     else()&#xD;
+&#xD;
+&#xD;
+</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <property name="OrderLineAction">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace ws=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+fn:normalize-space(ws:OrderLineAction/text())</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <property name="AccountType">
+    <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+      <osm:xquery>declare namespace sof=&quot;SalesOrderFulfillment&quot;;&#xD;
+declare namespace ord=&quot;http://xmlns.oracle.com/communications/ordermanagement&quot;;&#xD;
+&#xD;
+declare variable $inputDoc as document-node() external;&#xD;
+&#xD;
+let $order := $inputDoc/GetOrder.Response/_root/inputMessage/ord:Order&#xD;
+let $customerHeader := $order/ord:CustomerHeader &#xD;
+&#xD;
+return&#xD;
+$customerHeader/ord:CustomerType/text()</osm:xquery>
+    </nodesetExpression>
+  </property>
+  <hierarchy name="parentChildHierarchy" useForChildCompletionDependency="true">
+    <key>
+      <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+        <osm:xquery>declare namespace osm=&quot;http://xmlns.oracle.com/communications/ordermanagement/model&quot;;&#xD;
+declare namespace prop=&quot;SalesOrderFulfillment&quot;;&#xD;
+&#xD;
+fn:normalize-space(osm:properties/prop:LineId/text())</osm:xquery>
+      </nodesetExpression>
+    </key>
+    <parentKey>
+      <nodesetExpression xsi:type="osm:XqueryExpressionRuleType">
+        <osm:xquery>declare namespace osm=&quot;http://xmlns.oracle.com/communications/ordermanagement/model&quot;;&#xD;
+declare namespace prop=&quot;SalesOrderFulfillment&quot;;&#xD;
+&#xD;
+fn:normalize-space(osm:properties/prop:ParentLineId/text())</osm:xquery>
+      </nodesetExpression>
+    </parentKey>
+  </hierarchy>
+  <physicalHierarchy>
+    <com:entity>SalesOrderLine</com:entity>
+    <com:entityType>orderItemSpec</com:entityType>
+    <com:relationship>oracle.communications.sce.osm.orchestration.orderItemSpec.physicalHierarchy</com:relationship>
+    <com:element>parentChildHierarchy</com:element>
+    <com:elementType>oracle.communications.sce.osm.orchestration.orderItemSpec.hierarchy</com:elementType>
+  </physicalHierarchy>
+  <orderTemplateContribution>
+    <ord:nodeExtension>
+      <ord:path>/ControlData</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/LineId</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/LineName</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/ParentOrderLineId</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/RootLineId</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/LineXmlData</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/ProductClass</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/ProductSpec</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/OrderLineAction</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/ProductSpec</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/AccountDetails/AccountInfo</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/AccountDetails/AccountInfo/AccountType</ord:path>
+    </ord:nodeExtension>
+    <ord:nodeExtension>
+      <ord:path>/ControlData/OrderItem/AccountType</ord:path>
+    </ord:nodeExtension>
+    <ord:orderData>
+      <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+      <com:entityType>xsd</com:entityType>
+      <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+      <com:element>ControlData</com:element>
+      <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+      <com:elementName>ControlData</com:elementName>
+      <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+      <com:baseElement>(Reusable Structure)</com:baseElement>
+      <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+      <ord:childNode>
+        <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+        <com:entityType>xsd</com:entityType>
+        <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+        <com:element>OrderItem</com:element>
+        <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+        <com:elementName>OrderItem</com:elementName>
+        <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+        <com:baseElement>(Reusable Structure)</com:baseElement>
+        <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/LineId</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>LineId</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/LineName</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>LineName</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/ParentOrderLineId</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>ParentOrderLineId</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/RootLineId</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>RootLineId</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/ProductClass</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>ProductClass</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/OrderLineAction</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>OrderLineAction</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/LineXmlData</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>LineXmlData</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>(Local Structure)</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>OrderItem/ProductSpec</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>ProductSpec</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+        <ord:childNode>
+          <com:entity>SalesOrderFulfillment-POCDataDictionary</com:entity>
+          <com:entityType>xsd</com:entityType>
+          <com:relationship>com.mslv.studio.provisioning.order.orderTemplateNode</com:relationship>
+          <com:element>AccountType</com:element>
+          <com:elementType>com.mslv.studio.core.data.dictionary.node</com:elementType>
+          <com:elementName>AccountType</com:elementName>
+          <com:namespace>http://xmlns.oracle.com/communications/sce/dictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary</com:namespace>
+          <com:baseElement>string</com:baseElement>
+          <com:baseNamespace>http://www.w3.org/2001/XMLSchema</com:baseNamespace>
+        </ord:childNode>
+      </ord:childNode>
+    </ord:orderData>
+  </orderTemplateContribution>
+</com:modelEntity>

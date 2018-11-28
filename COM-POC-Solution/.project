@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>COM-POC-Solution</name>
+	<comment></comment>
+	<projects>
+		<project>COM-POC-ProductModel</project>
+		<project>SalesOrderFulfillment_Business</project>
+		<project>SalesOrderFulfillment-POCBase</project>
+		<project>SalesOrderFulfillment-POCDataDictionary</project>
+		<project>SalesOrderFulfillment-POCFulfillmentPattern</project>
+		<project>SalesOrderFulfillment-POCRecognitionRule</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.mslv.studio.core.builder.generator</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.mslv.studio.core.builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>oracle.communications.studio.osm.cartridge.composite.core.nature</nature>
+		<nature>com.mslv.studio.core.nature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+</projectDescription>

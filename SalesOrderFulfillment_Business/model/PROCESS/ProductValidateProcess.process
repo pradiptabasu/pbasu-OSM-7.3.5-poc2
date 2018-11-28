@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:proc="http://xmlns.oracle.com/communications/sce/osm/model/process" xmlns="http://xmlns.oracle.com/communications/sce/osm/model/process" xmlns:prov="http://xmlns.oracle.com/communications/sce/osm/model/provisioning" xmlns:task="http://xmlns.oracle.com/communications/sce/osm/model/process/task" xsi:type="proc:processType" name="ProductValidateProcess" workstream="false">
+  <com:displayName>ProductValidateProcess</com:displayName>
+  <com:saveVersion>8</com:saveVersion>
+  <com:id>HFfIjCsfRTCfl04f4JtI9Q</com:id>
+  <proc:orderType>
+    <com:entity>SalesOrderFulfillment</com:entity>
+    <com:entityType>order</com:entityType>
+    <com:relationship>orderRef</com:relationship>
+  </proc:orderType>
+  <proc:expectedDuration>P0Y0M0DT0H0M86400S</proc:expectedDuration>
+  <proc:startTask>Start1</proc:startTask>
+  <proc:activity id="Start1" name="Start">
+    <proc:processHistorySummary>true</proc:processHistorySummary>
+    <proc:diagramLocation>
+      <proc:Xcoordinate>50.0</proc:Xcoordinate>
+      <proc:Ycoordinate>50.0</proc:Ycoordinate>
+    </proc:diagramLocation>
+  </proc:activity>
+  <proc:activity xsi:type="proc:endType" id="End3" name="End">
+    <proc:diagramLocation>
+      <proc:Xcoordinate>693.0</proc:Xcoordinate>
+      <proc:Ycoordinate>169.0</proc:Ycoordinate>
+    </proc:diagramLocation>
+  </proc:activity>
+  <proc:activity xsi:type="proc:taskRef" id="Task2" name="ProductValidateTask">
+    <proc:processHistorySummary>true</proc:processHistorySummary>
+    <proc:diagramLocation>
+      <proc:Xcoordinate>76.0</proc:Xcoordinate>
+      <proc:Ycoordinate>299.0</proc:Ycoordinate>
+    </proc:diagramLocation>
+    <proc:task>
+      <com:entity>ProductValidateTask</com:entity>
+      <com:entityType>manualTask</com:entityType>
+      <com:relationship>taskRef</com:relationship>
+    </proc:task>
+  </proc:activity>
+  <proc:activity xsi:type="proc:taskRef" id="Task1" name="ProductValidateTaskAuto">
+    <proc:processHistorySummary>true</proc:processHistorySummary>
+    <proc:diagramLocation>
+      <proc:Xcoordinate>362.0</proc:Xcoordinate>
+      <proc:Ycoordinate>86.0</proc:Ycoordinate>
+    </proc:diagramLocation>
+    <proc:task>
+      <com:entity>ProductValidateTaskAuto</com:entity>
+      <com:entityType>automationTask</com:entityType>
+      <com:relationship>taskRef</com:relationship>
+    </proc:task>
+  </proc:activity>
+  <proc:transition id="Flow2" name="next">
+    <proc:from>Task2</proc:from>
+    <proc:to>Task1</proc:to>
+    <proc:status>next</proc:status>
+    <proc:mandatoryCheck>true</proc:mandatoryCheck>
+  </proc:transition>
+  <proc:transition id="Flow1" name="">
+    <proc:from>Start1</proc:from>
+    <proc:to>Task2</proc:to>
+    <proc:status></proc:status>
+    <proc:mandatoryCheck>true</proc:mandatoryCheck>
+  </proc:transition>
+  <proc:transition id="Flow4" name="ErrorState">
+    <proc:from>Task1</proc:from>
+    <proc:to>Task2</proc:to>
+    <proc:status>ErrorState</proc:status>
+    <proc:mandatoryCheck>false</proc:mandatoryCheck>
+  </proc:transition>
+  <proc:transition id="Flow3" name="next">
+    <proc:from>Task1</proc:from>
+    <proc:to>End3</proc:to>
+    <proc:status>next</proc:status>
+    <proc:mandatoryCheck>false</proc:mandatoryCheck>
+  </proc:transition>
+</com:modelEntity>
