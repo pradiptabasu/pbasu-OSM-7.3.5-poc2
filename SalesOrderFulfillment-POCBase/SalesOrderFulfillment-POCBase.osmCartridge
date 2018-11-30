@@ -14,7 +14,7 @@
   <com:targetApplicationVersion>
     <com:major>7</com:major>
     <com:minor>3</com:minor>
-    <com:maintenance>1</com:maintenance>
+    <com:maintenance>5</com:maintenance>
   </com:targetApplicationVersion>
   <com:sealed>false</com:sealed>
   <com:deploymentList displayName="Orders" includeAll="true" relationship="com.mslv.studio.provisioning.cartridge.packageActions">

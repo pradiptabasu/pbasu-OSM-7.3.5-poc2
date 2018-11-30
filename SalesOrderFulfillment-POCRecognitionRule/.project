@@ -3,8 +3,8 @@
 	<name>SalesOrderFulfillment-POCRecognitionRule</name>
 	<comment></comment>
 	<projects>
-		<project>SalesOrderFulfillment-POCBase</project>
 		<project>SalesOrderFulfillment-POCDataDictionary</project>
+		<project>SalesOrderFulfillment-POCBase</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
